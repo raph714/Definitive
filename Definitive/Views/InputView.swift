@@ -17,17 +17,20 @@ struct InputView: View {
             
             Text("Write a sentence: ")
                 .font(.largeTitle)
-            TextField("Once upon a time...", text: $sentence)
+            TextField("Once upon a time...", text: $sentence, axis: .vertical)
                 .textSelection(.enabled)
-            HStack {
-                ForEach(words, id: \.self) { word in
-                    Button {
-                        wordSelected(word)
-                    } label: {
-                        Text(word)
+            ScrollView(.horizontal, showsIndicators: true) {
+                HStack {
+                    ForEach(words, id: \.self) { word in
+                        Button {
+                            wordSelected(word)
+                        } label: {
+                            Text(word)
+                        }
                     }
                 }
             }
+            .frame(maxWidth: 500)
             
             Spacer()
         }

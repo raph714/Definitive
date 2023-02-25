@@ -25,6 +25,7 @@ struct DictionaryView: View {
                     ForEach(definitions.meanings) { meaning in
                         ForEach(meaning.definitions) { definition in
                             Text(definition.definition)
+                                .textSelection(.enabled)
                         }
                     }
                 }
