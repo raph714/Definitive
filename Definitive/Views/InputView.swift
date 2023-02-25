@@ -12,12 +12,12 @@ struct InputView: View {
     var wordSelected: (String) -> Void
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Spacer()
             
-            Text("Put it in me: ")
+            Text("Write a sentence: ")
                 .font(.largeTitle)
-            TextField("Enter a sentence", text: $sentence)
+            TextField("Once upon a time...", text: $sentence)
                 .textSelection(.enabled)
             HStack {
                 ForEach(words, id: \.self) { word in
