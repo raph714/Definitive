@@ -8,14 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var sentence: String = ""
+    @State private var selectedWord: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        HStack {
+            InputView(sentence: $sentence) { newWord in
+                selectedWord = newWord
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            
+            DictionaryView(selectedWord: $selectedWord)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .padding()
+        .background {
+            Color(.systemGray)
+        }
+        .frame(maxWidth: .infinity)
     }
 }
 

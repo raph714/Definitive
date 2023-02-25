@@ -11,6 +11,10 @@
 		CB9DCBB329AAABDD00A76D85 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9DCBB229AAABDD00A76D85 /* ContentView.swift */; };
 		CB9DCBB529AAABDE00A76D85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9DCBB429AAABDE00A76D85 /* Assets.xcassets */; };
 		CB9DCBB829AAABDE00A76D85 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB9DCBB729AAABDE00A76D85 /* Preview Assets.xcassets */; };
+		CB9DCBC029AAAFD300A76D85 /* DictionaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9DCBBF29AAAFD300A76D85 /* DictionaryView.swift */; };
+		CB9DCBC229AAB12100A76D85 /* DictionaryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9DCBC129AAB12100A76D85 /* DictionaryResponse.swift */; };
+		CB9DCBC429AAB19600A76D85 /* DictionaryData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9DCBC329AAB19600A76D85 /* DictionaryData.swift */; };
+		CB9DCBC629AAB32F00A76D85 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB9DCBC529AAB32F00A76D85 /* InputView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		CB9DCBB429AAABDE00A76D85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB9DCBB729AAABDE00A76D85 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB9DCBB929AAABDE00A76D85 /* Definitive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Definitive.entitlements; sourceTree = "<group>"; };
+		CB9DCBBF29AAAFD300A76D85 /* DictionaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryView.swift; sourceTree = "<group>"; };
+		CB9DCBC129AAB12100A76D85 /* DictionaryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryResponse.swift; sourceTree = "<group>"; };
+		CB9DCBC329AAB19600A76D85 /* DictionaryData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryData.swift; sourceTree = "<group>"; };
+		CB9DCBC529AAB32F00A76D85 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				CB9DCBB429AAABDE00A76D85 /* Assets.xcassets */,
 				CB9DCBB929AAABDE00A76D85 /* Definitive.entitlements */,
 				CB9DCBB629AAABDE00A76D85 /* Preview Content */,
+				CB9DCBBF29AAAFD300A76D85 /* DictionaryView.swift */,
+				CB9DCBC129AAB12100A76D85 /* DictionaryResponse.swift */,
+				CB9DCBC329AAB19600A76D85 /* DictionaryData.swift */,
+				CB9DCBC529AAB32F00A76D85 /* InputView.swift */,
 			);
 			path = Definitive;
 			sourceTree = "<group>";
@@ -139,7 +151,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB9DCBC229AAB12100A76D85 /* DictionaryResponse.swift in Sources */,
 				CB9DCBB329AAABDD00A76D85 /* ContentView.swift in Sources */,
+				CB9DCBC429AAB19600A76D85 /* DictionaryData.swift in Sources */,
+				CB9DCBC629AAB32F00A76D85 /* InputView.swift in Sources */,
+				CB9DCBC029AAAFD300A76D85 /* DictionaryView.swift in Sources */,
 				CB9DCBB129AAABDD00A76D85 /* DefinitiveApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
