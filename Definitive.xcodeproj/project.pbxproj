@@ -61,14 +61,11 @@
 			isa = PBXGroup;
 			children = (
 				CB9DCBB029AAABDD00A76D85 /* DefinitiveApp.swift */,
-				CB9DCBB229AAABDD00A76D85 /* ContentView.swift */,
+				CB9DCBC829AABDDF00A76D85 /* Data */,
+				CB9DCBC729AABDC400A76D85 /* Views */,
 				CB9DCBB429AAABDE00A76D85 /* Assets.xcassets */,
 				CB9DCBB929AAABDE00A76D85 /* Definitive.entitlements */,
 				CB9DCBB629AAABDE00A76D85 /* Preview Content */,
-				CB9DCBBF29AAAFD300A76D85 /* DictionaryView.swift */,
-				CB9DCBC129AAB12100A76D85 /* DictionaryResponse.swift */,
-				CB9DCBC329AAB19600A76D85 /* DictionaryData.swift */,
-				CB9DCBC529AAB32F00A76D85 /* InputView.swift */,
 			);
 			path = Definitive;
 			sourceTree = "<group>";
@@ -79,6 +76,25 @@
 				CB9DCBB729AAABDE00A76D85 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CB9DCBC729AABDC400A76D85 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CB9DCBB229AAABDD00A76D85 /* ContentView.swift */,
+				CB9DCBC529AAB32F00A76D85 /* InputView.swift */,
+				CB9DCBBF29AAAFD300A76D85 /* DictionaryView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CB9DCBC829AABDDF00A76D85 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				CB9DCBC329AAB19600A76D85 /* DictionaryData.swift */,
+				CB9DCBC129AAB12100A76D85 /* DictionaryResponse.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
