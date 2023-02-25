@@ -32,8 +32,9 @@ struct DictionaryData {
                 let dictResponse = try JSONDecoder().decode([DictionaryResponse].self, from: data)
                 completion(dictResponse)
             } catch {
-                let dataString = String(data: data, encoding: .utf8)
-                print(dataString)
+                if let dataString = String(data: data, encoding: .utf8) {
+                    print(dataString)
+                }
                 
                 print(String(describing: error))
                 completion([DictionaryResponse.empty])
