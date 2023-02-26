@@ -8,40 +8,48 @@
 import SwiftUI
 
 struct DictionaryView: View {
-    @Binding var selectedWord: String
+    @Binding var model: SentenceViewModel
     @State private var definitions: DictionaryResponse = .empty
     
     var body: some View {
-        VStack(spacing: 36) {
-            HStack {
-                Text(selectedWord)
-                    .font(.largeTitle)
-                    .textCase(.uppercase)
-                Spacer()
-            }
-            
-            ScrollView {
+        ScrollView {
+            VStack {
+                HStack {
+                    Text(model.selectedWord)
+                        .font(.largeTitle)
+                        .textCase(.uppercase)
+                    Spacer()
+                }
+                .padding(.top)
+                
                 VStack(alignment: .leading, spacing: 16) {
                     ForEach(definitions.meanings) { meaning in
                         ForEach(meaning.definitions) { definition in
-                            Text(definition.definition)
-                                .textSelection(.enabled)
+                            ZStack {
+                                Text(definition.definition)
+                                    .lineLimit(nil)
+                                    .onTapGesture {
+                                        model.replaceSelectedWord(with: definition.definition)
+                                    }
+                            }
+                            .padding()
+                            .background {
+                                Color.white
+                            }
+                            .cornerRadius(8)
                         }
                     }
                 }
             }
-            
-            Spacer()
+            .padding(24)
         }
-        .padding(24)
-        .onChange(of: selectedWord) { newValue in
+        .onChange(of: model.selectedWord) { newValue in
             lookupWord()
         }
     }
     
     func lookupWord() {
-        DictionaryData.shared.getDefinitions(for: selectedWord) { response in
-            
+        DictionaryData.shared.getDefinitions(for: model.selectedWord) { response in
             if !response.isEmpty {
                 definitions = response.first!
             }
@@ -53,6 +61,6 @@ struct DictionaryView: View {
 
 struct DictionaryView_Previews: PreviewProvider {
     static var previews: some View {
-        DictionaryView(selectedWord: .constant("hello"))
+        DictionaryView(model: .constant(SentenceViewModel()))
     }
 }

@@ -8,44 +8,47 @@
 import SwiftUI
 
 struct InputView: View {
-    @Binding var sentence: String
-    var wordSelected: (String) -> Void
+    @Binding var model: SentenceViewModel
     
     var body: some View {
-        VStack(alignment: .leading) {
-            Spacer()
-            
-            Text("Write a sentence: ")
-                .font(.largeTitle)
-            TextField("Once upon a time...", text: $sentence, axis: .vertical)
-                .textSelection(.enabled)
-            ScrollView(.horizontal, showsIndicators: true) {
-                HStack {
-                    ForEach(words, id: \.self) { word in
-                        Button {
-                            wordSelected(word)
-                        } label: {
-                            Text(word)
+        ScrollView {
+            VStack(alignment: .leading) {
+                Spacer()
+                
+                Text("Write a sentence: ")
+                    .font(.largeTitle)
+                
+                TextField("Once upon a time...", text: $model.sentence, axis: .vertical)
+                    .font(.title)
+                    .textSelection(.enabled)
+                    .padding(8)
+                    .background(content: {
+                        Color.white
+                    })
+                    .cornerRadius(4)
+                
+                ScrollView(.horizontal, showsIndicators: true) {
+                    HStack {
+                        ForEach(model.words, id: \.self) { word in
+                            Button {
+                                model.wordSelected(word)
+                            } label: {
+                                Text(word)
+                            }
                         }
                     }
+                    .padding(.bottom, 16)
                 }
+                
+                Spacer()
             }
-            .frame(maxWidth: 500)
-            
-            Spacer()
+            .padding(24)
         }
-        .padding(24)
-    }
-    
-    var words: [String] {
-        let words = sentence.components(separatedBy: " ")
-        let filteredWords = words.filter({ !$0.isEmpty })
-        return filteredWords
     }
 }
 
 struct InputView_Previews: PreviewProvider {
     static var previews: some View {
-        InputView(sentence: .constant(""), wordSelected: {_ in})
+        InputView(model: .constant(SentenceViewModel()))
     }
 }

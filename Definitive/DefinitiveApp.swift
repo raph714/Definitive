@@ -11,7 +11,8 @@ import SwiftUI
 struct DefinitiveApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SentenceView()
         }
     }
 }
+
